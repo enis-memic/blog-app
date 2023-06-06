@@ -57,6 +57,7 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **Add users**
 - **Post comments**
 - **Comment on Posts**
 
