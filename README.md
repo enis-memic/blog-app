@@ -60,6 +60,8 @@
 - **Add users**
 - **Post comments**
 - **Comment on Posts**
+- **Test for MODELS**
+- **Validation for MODELS**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
