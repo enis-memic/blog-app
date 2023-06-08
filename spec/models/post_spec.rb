@@ -35,9 +35,10 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-
   describe '#recent_comments' do
-    let(:post) { Post.create(title: 'Test Post', author: author, text:'This is test post', comment_counter: 0, likes_counter: 0 ) }
+    let(:post) do
+      Post.create(title: 'Test Post', author: author, text: 'This is test post', comment_counter: 0, likes_counter: 0)
+    end
     let(:author) { User.create(name: 'Elli', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from China.') }
 
     let!(:comment1) { Comment.create(author: author, post: post, text: 'Comment one') }
@@ -53,13 +54,16 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#update_posts_counter' do
-  let(:user) { User.create(name: 'John Doe', photo: 'https://example.com/photo.jpg', post_counter: 0, bio: 'Lorem ipsum') }
-  let(:post) { Post.new(title: 'Test Post', author: user, text: 'Is Microverse really the best tech school out there?',comment_counter: 0, likes_counter: 0) }
+    let(:user) { User.create(name: 'John Doe', photo: 'https://example.com/photo.jpg', post_counter: 0, bio: 'Lorem ipsum') }
+    let(:post) do
+      Post.new(title: 'Test Post', author: user, text: 'Is Microverse really the best tech school out there?',
+               comment_counter: 0, likes_counter: 0)
+    end
 
-  it 'increments the author\'s post_counter' do
-    post.save
-    # It will calll update_posts_counter automatically after saving successfully
-    expect(user.post_counter).to eq(1)
+    it 'increments the author\'s post_counter' do
+      post.save
+      # It will calll update_posts_counter automatically after saving successfully
+      expect(user.post_counter).to eq(1)
+    end
   end
-end
 end
