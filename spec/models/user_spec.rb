@@ -33,14 +33,33 @@ describe 'Tests:' do
     it '#recent_posts method should return the last three(3) posts of the user' do
       new_user = User.new(name: 'Elli', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from China.')
       new_user.save
-      Post.create(title: 'Test Post', author: new_user, text: 'This is test post', comment_counter: 0,
-                  likes_counter: 0)
-      Post.create(author: new_user, title: 'Codding',
-                  text: 'Software development is a crucial aspect of the tech industry', comment_counter: 0, likes_counter: 0)
-      Post.create(author: new_user, title: 'Nigeria', text: 'Nigeria is a beautiful country to visit',
-                  comment_counter: 0, likes_counter: 0)
-      Post.create(author: new_user, title: 'Microverse',
-                  text: 'Is Microverse really the best tech school out there?', comment_counter: 0, likes_counter: 0)
+      Post.create(
+        title: 'Test Post', 
+        author: new_user, 
+        text: 'This is test post', 
+        comment_counter: 0,
+        likes_counter: 0
+        )
+      Post.create(
+        author: new_user, 
+        title: 'Codding',
+        text: 'Software development is a crucial aspect of the tech industry', 
+        comment_counter: 0, 
+        likes_counter: 0
+        )
+      Post.create(
+        author: new_user, 
+        title: 'Nigeria', 
+        text: 'Nigeria is a beautiful country to visit',
+        comment_counter: 0, 
+        likes_counter: 0
+        )
+      Post.create(
+        author: new_user, 
+        title: 'Microverse',
+        text: 'Is Microverse really the best tech school out there?', comment_counter: 0, 
+        likes_counter: 0
+        )
 
       recent_posts = new_user.recent_posts
 
