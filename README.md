@@ -64,6 +64,7 @@
 - **Validation for MODELS**
 - **Controllers**
 - **Basic HTML**
+- **Test for Controllers'**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
