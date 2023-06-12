@@ -62,6 +62,8 @@
 - **Comment on Posts**
 - **Test for MODELS**
 - **Validation for MODELS**
+- **Controllers**
+- **Basic HTML**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
