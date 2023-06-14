@@ -1,5 +1,5 @@
 <div class='mt-3 d-flex align-items-center flex-column'>
-  <div class="card mb-3 border-primary" style="width: 670px;">
+  <div class="card mb-3 border-primary" style="width: 800px;">
     <div class="card-header bg-primary text-white">
       <div class='row'>
         <div class='col-md-8'><%= @posts.title %> by <%= @user.name %></div>
@@ -14,15 +14,14 @@
       <p class="card-text"><%= @posts.text%></p>
     </div>
   </div>
-<h6>Recent Comments</h6>
     <% if @comments.empty? %>
-     <div class="card mb-3 border-secondary" style="width: 540px;">
+     <div class="card mb-3 border-secondary" style="width: 700px;">
        <div class="card-body">
             <p class="card-text">No Comments</p>
           </div>
         </div>
  <% else %>
-     <div class="card mb-3 border-secondary" style="width: 540px;">
+     <div class="card mb-3 border-secondary" style="width: 700px;">
           <div class="card-body">
             <% @comments.each do |comment| %>
               <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
