@@ -65,6 +65,7 @@
 - **Controllers**
 - **Basic HTML**
 - **Test for Controllers'**
+- **Views**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
