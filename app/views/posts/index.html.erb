@@ -5,24 +5,24 @@
         <div class="col-md-4">
           <img src="<%= @user.photo %>" class="img-fluid rounded-start" alt="profile">
         </div>
-        <div class="col-md-8">
-          <div class="card-body d-flex flex-column">
-  <div class="text-start mt-5">
-    <h4 class="card-title"><%= @user.name %></h4>
-  </div>
-  <div class="text-end mt-5">
-    <p class="card-text"><h6>Number of posts: <%= @user.post_counter %></h6></p>
-  </div>
-</div>
+      <div class="col-md-8">
+        <div class="card-body d-flex flex-column">
+          <div class="text-start mt-5">
+            <h4 class="card-title"><%= @user.name %></h4>
+          </div>
+          <div class="text-end mt-5">
+            <p class="card-text"><h6>Number of posts: <%= @user.post_counter %></h6></p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-     <%= link_to "Add New Post", new_user_post_path(user_id: @user.id), class:"btn btn-primary my-3" %>
+  <%= link_to "Add New Post", new_user_post_path(user_id: @user.id), class:"btn btn-primary my-3" %>
     
-    <h4>Posts</h4>
-    <% @posts.each do |post| %>
-      <%= link_to user_post_path(user_id: @user.id, id: post.id), class:"nav-link mt-4 d-flex justify-content-center" do %>
+  <h4>Posts</h4>
+  <% @posts.each do |post| %>
+    <%= link_to user_post_path(user_id: @user.id, id: post.id), class:"nav-link mt-4 d-flex justify-content-center" do %>
         <div class="card mb-3 text-center justify-content-center" style="width: 800px;">
           <div class="row g-0 text-center">
             <div class="col-md-8">
@@ -38,20 +38,20 @@
             </div>
 
               <% if post.recent_comments.empty? %>
-            <div class="card mb-3 border-secondary" style="width: 800px;">
-              <div class="card-body">
-                <p class="card-text">No Comments</p>
-              </div>
-            </div>
-          <% else %>
-            <div class="card mb-3 border-secondary" style="width: 800px;">
-              <div class="card-body">
-                <% post.recent_comments.each do |comment| %>
-                  <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
+                <div class="card mb-3 border-secondary" style="width: 800px;">
+                  <div class="card-body">
+                    <p class="card-text">No Comments</p>
+                  </div>
+                </div>
+              <% else %>
+                <div class="card mb-3 border-secondary" style="width: 800px;">
+                  <div class="card-body">
+                    <% post.recent_comments.each do |comment| %>
+                      <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
       <% end %>
