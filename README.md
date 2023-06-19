@@ -148,6 +148,10 @@ Example:
 - GitHub: [@enis-memic](https://github.com/enis-memic)
 - LinkedIn: [enis-memic](https://linkedin.com/in/enis-memic)
 
+👤 **Shubham Bhoyar**
+
+- GitHub: [@enis-memic](https://github.com/shubhambhoyar077)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
