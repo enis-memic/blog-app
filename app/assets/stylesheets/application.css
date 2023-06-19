@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.pagination {
+  gap: 20px;
+}
