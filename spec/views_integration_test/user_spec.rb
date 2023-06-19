@@ -53,7 +53,7 @@ RSpec.describe User, type: :system do
 
     it "I can see the user's first 3 posts." do
       Post.create([{ author: subject, title: 'First Post', text: 'My first post' },
-                   { author: subject, title: 'Second Post', text: 'My Second post' }, 
+                   { author: subject, title: 'Second Post', text: 'My Second post' },
                    { author: subject, title: 'Third Post', text: 'My Third post' }])
       visit user_path(subject.id)
       page.has_content?(subject.posts)
