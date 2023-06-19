@@ -22,7 +22,8 @@ RSpec.describe User, type: :system do
     end
 
     it "When I click on a user, I am redirected to that user's show page." do
-      user2 = User.create(name: 'Lilly', post_counter: 2, photo: 'https://randomuser.me/api/portraits/women/70.jpg', bio: 'Teacher from Poland.')
+      user2 = User.create(name: 'Lilly', post_counter: 2, photo: 'https://randomuser.me/api/portraits/women/70.jpg',
+                          bio: 'Teacher from Poland.')
       visit root_path(user2)
       click_on 'Lilly'
       page.has_content?('Lilly')
