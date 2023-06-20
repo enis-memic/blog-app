@@ -1,5 +1,7 @@
+<div style="display: flex; justify-content: flex-end; margin-right: 20px;">
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+</div>
 <h1 class='text-center mt-4'>Users</h1>
-<%= button_to "Logout", destroy_user_session_path, method: :delete %>
 <% @users.each do |user| %>
 <%= link_to user_path(id:user.id), 
 class:"nav-link mt-4 d-flex justify-content-center" do %>
