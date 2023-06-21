@@ -25,6 +25,9 @@
           <div class="card-body">
             <% @comments.each do |comment| %>
               <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
+              <% if can? :destroy, comment %>
+              <%= button_to "Delete", user_post_comment_path(@post.author, @posts, comment), method: :delete, class:"btn btn-outline-danger" %>
+              <% end %>
               <% end %>
           </div>
       </div>
