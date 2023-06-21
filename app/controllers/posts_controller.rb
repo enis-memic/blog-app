@@ -35,9 +35,9 @@ class PostsController < ApplicationController
     if @post.destroy
       @post.decrement_posts_counter
       redirect_to user_posts_path(current_user.id)
-      else
-        render :new
-      end
+    else
+      render :new
+    end
   end
 
   def include_user
