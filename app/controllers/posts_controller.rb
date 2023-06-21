@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @pagy, @posts = pagy(@user.posts, items: 2)
@@ -22,6 +24,20 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+    @post.destroy
+
+    if @post.destroy
+      @post.decrement_posts_counter
+      redirect_to user_posts_path(current_user.id)
+      else
+        render :new
+      end
   end
 
   def include_user
