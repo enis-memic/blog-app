@@ -26,11 +26,13 @@
     </div>
   </div>
   <% if @user.recent_posts.empty? %>
+  <div class="d-flex justify-content-center">
     <div class="card mb-3" style="width: 800px;">
       <div class="card-header ">No Posts</div>
       <div class="card-body">
         <h5 class="card-title">Please submit a new post.</h5>
       </div>
+    </div>
     </div>
   <% else %>
     <% @user.recent_posts.each do |post| %>

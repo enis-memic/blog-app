@@ -71,6 +71,9 @@
 - **Log in page**
 - **Create new user**
 - **Log out**
+- **Admin role**
+- **Delete posts**
+- **Delete comments**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
