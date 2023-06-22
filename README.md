@@ -74,6 +74,7 @@
 - **Admin role**
 - **Delete posts**
 - **Delete comments**
+- **API authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,8 +165,7 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [x] APP authentication
-- [x] APP documentation
+- [x] API documentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
