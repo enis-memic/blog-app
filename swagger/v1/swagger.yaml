@@ -1,0 +1,149 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/comments":
+    post:
+      summary: Creates a comment
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '201':
+          description: comment created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                user_id:
+                  type: integer
+                post_id:
+                  type: integer
+              required:
+              - comment
+              - user_id
+              - post_id
+  "/api/v1/comments/{id}":
+    get:
+      summary: Retrieves a comment
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: comment found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  comment:
+                    type: string
+                  user_id:
+                    type: integer
+                  post_id:
+                    type: integer
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                required:
+                - id
+                - comment
+                - user_id
+                - post_id
+                - created_at
+                - updated_at
+        '404':
+          description: comment not found
+        '406':
+          description: unsupported accept header
+  "/api/v1/posts":
+    post:
+      summary: Creates a post
+      tags:
+      - Posts
+      parameters: []
+      responses:
+        '201':
+          description: post created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                user_id:
+                  type: integer
+              required:
+              - title
+              - content
+              - user_id
+  "/api/v1/posts/{id}":
+    get:
+      summary: Retrieves a post
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: post found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  content:
+                    type: string
+                  user_id:
+                    type: integer
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                required:
+                - id
+                - title
+                - content
+                - user_id
+                - created_at
+                - updated_at
+        '404':
+          description: post not found
+        '406':
+          description: unsupported accept header
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
